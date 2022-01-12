@@ -9,31 +9,29 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&family=Shadows+Into+Light&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Nanum+Pen+Script&family=Quicksand:wght@300&family=Shadows+Into+Light&display=swap"
         rel="stylesheet">
 </head>
 
 <body>
     <div class="container">
         <div class="all_content_wrapper">
-            <div class="defalut_bg">
-            </div>
-            <div class="bg1">
-            </div>
-            <div class="bg2">
-            </div>
-            <div class="bg3">
-            </div>
-            <div class="bg4">
-            </div>
             <div class="intro_box">
                 <div class="intro_wrapper history_tab">
-
+                    <div>
+                        <span class="school"><i class="fas fa-school"></i></span>
+                        <span class="gradu"><i class="fas fa-graduation-cap"></i></span>
+                        <span class="company"><i class="fas fa-building"></i></span>
+                    </div>
                     <span>History</span>
                 </div>
                 <div class="flex_div_style">
                     <div class="intro_wrapper portfolio_tab">
-                        <div><i class="far fa-file-alt"></i></div>
+                        <div>
+                            <span class="file"><i class="far fa-file-alt"></i></span>
+                            <span class="laptop"><i class="fas fa-laptop"></i></span>
+                        </div>
                         <span>Portfolios</span>
                     </div>
                     <div class="intro_wrapper intro_tab">
@@ -44,42 +42,71 @@
                         <span>Who Am I</span>
                     </div>
                     <div class="intro_wrapper skill_tab">
-
-                        <span>Skills</span>
+                        <div class="skill_icon_wrapper">
+                            <img src="./images/skill.png" alt="">
+                            <img class="flame" src="./images/welding.png" alt="">
+                        </div>
+                        <div>
+                            <span class="skillFont">Skills</span>
+                        </div>
                     </div>
                 </div>
                 <div class="intro_wrapper contact_tab">
-
+                    <div class="contact_icon_wrapper">
+                        <span class="hand"><i class="far fa-hand-point-up"></i></span>
+                        <span class="addr_book"><i class="fas fa-address-book"></i></span>
+                    </div>
                     <span>Contact</span>
                 </div>
             </div>
             <div class="side_tab">
-                <div class="opacity_bg"></div>
                 <div class="intro_small">
-                    <div>
+                    <div class="big_font_wrapper">
                         <span>
-                            SEONG-WOOSEOCK PORTFOLIO
+                            SEONG-WOOSEOCK <br>
+                            PORTFOLIO
                         </span>
                     </div>
-                    <div>
+                    <div class="profile_img_wrapper">
                         <div>
-                            <img src="" aslt="">
+                            <img src="./images/profile.jpg" aslt="">
                         </div>
                     </div>
-                    <div>
+                    <div class="small_font_wrapper">
                         <span>
-                            안녕하세요 Front-end 신입 개발자 성우석입니다.
+                            안녕하세요! <br>
+                            <strong>Front-end 신입 개발자 성우석</strong> 입니다. <br>
                             포트폴리오 페이지에 오신걸 환영합니다!
                         </span>
                     </div>
+                    <div class="web_skin">
+                        <button value="lightMode" class="light_mode skin_btn"><i class="fas fa-sun"></i> </button>
+                        <button value="darkMode" class="dark_mode skin_btn"><i class="far fa-moon"></i></button>
+                    </div>
+                    <div class="skin_font"><span>Light Mode</span></div>
                     <div class="icon_box">
-
+                        <a target="blank" href="https://github.com/Seong-WooSeock">
+                            <span>
+                                <i class="fab fa-github"></i>
+                            </span>
+                        </a>
+                        <a target="blank" href="https://blog.naver.com/woo_seock">
+                            <span>
+                                <i class="fab fa-blogger"></i>
+                            </span>
+                        </a>
+                        <a target="blank" href="https://www.facebook.com/profile.php?id=100003900781680">
+                            <span>
+                                <i class="fab fa-facebook"></i>
+                            </span>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <script src="https://kit.fontawesome.com/39caf77dda.js" crossorigin="anonymous"></script>
+    <script src="./js/event.js"></script>
 </body>
 
 </html>

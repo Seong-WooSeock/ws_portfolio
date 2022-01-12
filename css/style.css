@@ -1,27 +1,58 @@
+:root[color-theme='dark'] {
+    --body_bg: #32373D;
+    --font_color: #ffffff;
+    --border_profile: 3px solid #ffffff;
+    --side_bg: black;
+    --border_content: 1px solid #ffffff;
+    --content_bg: #434649;
+    --filter_color: invert();
+    --grad_background: linear-gradient(-45deg, #2e231c, #351a20, #23384d, #0f362d); 
+}
+:root[color-theme='light'] {
+    --body_bg: #F8F7F3;
+    --font_color: black;
+    --border_profile: 3px solid black;
+    --side_bg: #ffffff;
+    --border_content: 1px solid black;
+    --content_bg: #ffffff;
+    --filter_color: none;
+    --grad_background: linear-gradient(-45deg, #C26225, #EDD4DA, #94B5D6, #23d5ab); 
+}
+  
+
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+a{
+    text-decoration: none;
+    color:var(--font_color);
+}
+body{
+    background-color: var(--body_bg);
+}
 .container{
     width:  100%;
     height: 100%;
 }
-.defalut_bg{
 
-}
 
 .all_content_wrapper{
     display: flex;
 }
+
 .intro_box{
     max-width: 650px;
     width: 100%;
     height: 100%;
     margin: 30px auto auto;
     padding: auto;
-    border: 1px solid black;
-    background-color: #4D4D4D;
+    border: var(--border_content);
+    background: var(--grad_background); 
+    background-size: 400% 400%; 
+    animation: grad_Bg 15s ease infinite;   
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -35,29 +66,37 @@
 .intro_wrapper{
     width: 200px;
     height: 200px;
-    border: 1px solid black;
     margin: 5px;
-    background-color: white;
+    background-color: var(--side_bg);
+    color: var(--font_color);
     border-radius: 20px;
-    font-family: 'Quicksand', sans-serif;
     text-align: center;
     padding: 60px 0;
-    box-shadow: .5px .75px 1px 1px rgb(66, 63, 63);
+    box-shadow: 1px .75px 2px 2px rgb(73, 73, 73);
+    cursor: pointer;
 }
 
 .intro_wrapper span{
     font-size: 2em;
-    font-weight: 900;
+    font-family: 'Anton', sans-serif;
 }
-.whoami_icon_wrapper{
-    position: relative;
+
+.skillFont{
+    font-size: 2em !important;
+    font-family: 'Anton', sans-serif;
 }
+
+.intro_wrapper div span{
+    font-size: 28px;
+}
+
 .qustionMark_style{
     position: absolute;
     top: 7px;
-    left: 94px;
+    left: 95px;
     font-size: 18px !important;
     font-weight: 900;
+    font-family: 'Quicksand', sans-serif !important;
     cursor: pointer;
 }
 .contact_tab{
@@ -75,52 +114,177 @@
 .history_tab{
     animation-name:fadeInDown;
     animation-iteration-count :1;
-    animation-duration:  .8s;
+    animation-duration: .8s;
 }
 .portfolio_tab{
     animation-name:fadeInRight;
     animation-iteration-count :1;
     animation-duration:  .8s;
 }
-
-.portfolio_tab div{
-    font-size: 2em;
-}
 .skill_tab{
+    display: flex;
+    flex-direction: column;
     animation-name:fadeInLeft;
     animation-iteration-count :1;
     animation-duration:  .8s;
 }
-.intro_wrapper span{
-    
+.laptop{
+    animation: fadeIn 2s 1;
+    display: none;
 }
+.whoami_icon_wrapper{
+    position: relative;
+}
+
+.whoami_icon_wrapper img{
+    filter:var(--filter_color);
+}
+.skill_icon_wrapper{
+    position: relative;
+}
+.skill_icon_wrapper img{
+    width: 50px;
+}
+.company{
+    display: none;
+    animation: fadeIn 1s 1;
+}
+.gradu{
+    animation: fadeIn 1s 1;
+    display: none;
+}
+.addr_book{
+    display: none;
+    animation: fadeIn 2s 1;
+}
+.flame{
+    position: absolute;
+    left:74px;
+}
+
+.contact_icon_wrapper img{
+    width: 30px;
+}
+
+.portfolio_tab div{
+    font-size: 2em;
+}
+
+
+/* side */
 .side_tab{
-    width: 300px;
-    height: 100%;
-    background-color: #ffffff;
+    position: relative;
+    width: 350px;
 }
-.opacity_bg{
-    top: 0;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    opacity: 0.7;
-    z-index: 1;
-}
+
 .intro_small{
     top: 0;
     position: fixed;
     width: 100%;
     height: 100%;
     z-index: 2;
+    border-left: 2px solid black;
+    background-color: var(--side_bg);  
 }
 
-.intro_small div span{
-    color: white;
+.big_font_wrapper{
+    margin: 20px 0 0 20px;
+    text-align: left;
+}
+
+.big_font_wrapper span{
     font-family: 'Shadows Into Light', cursive;
+    font-size: 1.8em;
+    font-weight: 600;
+    color: var(--font_color);
+}
+.profile_img_wrapper{
+    margin: 20px 0 0 88px;
+    border: var(--border_profile);
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
+.profile_img_wrapper img{
+    width: 180px;
+}
+
+.small_font_wrapper{
+    width: 350px;
+    margin: 30px 30px;
+    font-family: 'Nanum Pen Script', cursive;
+    color: var(--font_color);
+}
+.small_font_wrapper span{
+    font-size: 25px;
+}
+.icon_box{
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    left: 104px;
+    
+}
+.icon_box span{
+    font-size: 40px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.icon_box span:hover{
+    opacity: 1;
+}
+
+.web_skin{
+    box-sizing: border-box;
+    margin-top: 70px;
+    margin-left: 120px;
+    width: 110px;
+    height: 52px;
+    border: var(--border_content);
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #434649;
+    position: relative;
+}
+
+.skin_btn{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 0;
+    margin: 0;
+    display: block;
+    
+}
+
+.light_mode{
+    background-color: #ffffff;
+    font-size: 20px;
+    position: absolute;
+    left: 0;
+    border: .5px solid black;
+    animation: btn_light 1s 1;
+
+}
+.dark_mode{
+    background-color: black;
+    color: yellow;
+    font-size: 20px;
+    position: absolute;
+    right: 0;
+    border: .5px solid white;
+    animation:btn_dark  1s 1;
+}
+
+.skin_font{
+    font-family: 'Nanum Pen Script', cursive;
+    margin-left: 150px;
+    color: var(--font_color);
+}
 
 
 /* animation */
@@ -162,7 +326,8 @@
         opacity: 1;
         transform: translateZ(0);
     }
-}@keyframes fadeInRight {
+}
+@keyframes fadeInRight {
     0% {
         opacity: 0;
         transform: translate3d(-100% , 0 ,0);
@@ -172,5 +337,39 @@
         transform: translateZ(0);
     }
 }
+@keyframes flameSkills {
+    0% {
+        filter: invert(96%) sepia(61%) saturate(144%) hue-rotate(223deg) brightness(116%) contrast(94%);
+    }
+    to {
+        filter: invert(94%) sepia(2%) saturate(6116%) hue-rotate(3deg) brightness(85%) contrast(119%);
+    }
+}
+@keyframes btn_light{
+    0% {
+        transform: translate3d(100% , 0 ,0);
+    }
+    to {
+        transform: translateZ(0);
+    }
+}
+@keyframes btn_dark {
+    0% {
+        transform: translate3d(-100% , 0 ,0);
+    }
+    to {
+        transform: translateZ(0);
+    }
+}
+/* grad animation*/
+@keyframes grad_Bg { 
+    0%{background-position:0% 50%} 
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+/* grad animation*/
+/* 출처: https://www.crocus.co.kr/1582 [Crocus]*/
+
+
 /* animation */
 
