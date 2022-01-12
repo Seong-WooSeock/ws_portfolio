@@ -7,6 +7,7 @@
     --border_content: 1px solid #ffffff;
     --content_bg: #434649;
     --filter_color: invert();
+    --link_color: yellow;
     --grad_background: linear-gradient(-45deg, #2e231c, #351a20, #23384d, #0f362d); 
 }
 :root[color-theme='light'] {
@@ -18,6 +19,7 @@
     --border_content: 1px solid black;
     --content_bg: #ffffff;
     --filter_color: none;
+    --link_color: blue;
     --grad_background: linear-gradient(-45deg, #C26225, #EDD4DA, #94B5D6, #23d5ab); 
 }
   
@@ -222,6 +224,9 @@ body{
     font-family: 'Nanum Pen Script', cursive;
     color: var(--font_color);
 }
+.small_font_wrapper strong:hover{
+    background-color: var(--highlight);
+}
 .small_font_wrapper span{
     font-size: 25px;
 }
@@ -300,18 +305,31 @@ body{
 
 
 /* content */
+
 .content_style{
+    overflow-x: hidden;
     display: none;
     position: absolute;
     left: 15%;
     top: 10%;
     width: 70%;
     z-index: 10;
-    height: 80%;
+    max-height: 80%;
+    height: 100%;
     background-color: var(--content_bg);
     border: var(--border_content);
     color: var(--font_color);
     border-radius: 10px;
+    box-shadow: 2px .5px  2px .5px  #434649;
+}
+.d_scroll{
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.d_scroll::-webkit-scrollbar {
+    display: none;
 }
 .hd_content{
     display: flex;
@@ -323,7 +341,7 @@ body{
 }
 .h2_box h2{
     font-size: 2em;
-    font-family: 'Anton', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 .exit_box{
     font-size: 2em;
@@ -331,18 +349,20 @@ body{
     cursor: pointer;
 }
 
-.dc_wrapper{
-    background-color: var(--body_bg);
-    max-width: 690px;
-    margin: 10px auto;
-    overflow-y: clip;
-    text-overflow: clip;
 
+.dc_wrapper{
+    max-width: 690px;
+    margin: 30px auto;
+    overflow-x: hidden;
 }
+
+
 
     /* history-content */
 
     .history_wrapper{
+    background-color: var(--body_bg);
+    font-family: 'Quicksand', sans-serif;
         position: relative;
         
     }
@@ -458,7 +478,112 @@ body{
     }
     /* history-content */
 
+    /* pf-content */
+    .navi_btn_wrapper span{
+        color: var(--font_color);
+    }
+    .swiper-slide{
+        max-width: 650px;
+        width: 100%;
+        border: var(--bor);
+        margin: 0 20px;
+    }
+
+    .slideTab_wrapper{
+        width: 100%;
+        position: relative;
+    }
+    .img_detail_box{
+        display: flex;
+        justify-content: space-around;
+        border-bottom: var(--border_content);
+        padding-bottom: 20px;
+        cursor: pointer;
+    }
+    @media screen and (max-width: 980px){
+        .img_detail_box{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .swiper-slide{
+            margin: 0;
+        }
+    }
+    .skyImg{
+        position: relative;
+        width: 300px;
+        height: 200px;
+        border-radius: 10px;
+        box-shadow: .5px .5px 1px 1px #434649;
+        background-image: url(../images/sky1.PNG) 
+    }
+    .skyImg:hover{
+        background-image: url(../images/sky2.PNG) 
+    }
+
+    .pj_data strong:hover{
+        background-color: var(--highlight);
+    }
+
+    .link_exp_box div a:hover{
+        color: var(--link_color);
+    }
+
+    .ridiImg{
+        position: relative;
+        width: 300px;
+        height: 200px;
+        border-radius: 10px;
+        box-shadow: .5px .5px 1px 1px #434649;
+        background-image: url(../images/ridi1.PNG); 
+    }
+    .ridiImg:hover{
+        background-image: url(../images/ridi2.PNG); 
+    }
+
+    .highlight_strong{
+        background-color: var(--highlight);
+    }
+
+    .fasstoImg{
+        position: relative;
+        width: 300px;
+        height: 200px;
+        border-radius: 10px;
+        box-shadow: .5px .5px 1px 1px #434649;
+        background-image: url(../images/fassto1.PNG); 
+    }
+    .fasstoImg:hover{
+        background-image: url(../images/fassto2.PNG); 
+    }
+
+    .tossImg{
+        position: relative;
+        width: 300px;
+        height: 200px;
+        border-radius: 10px;
+        box-shadow: .5px .5px 1px 1px #434649;
+        background-image: url(../images/toss1.PNG); 
+    }
+    .tossImg:hover{
+        background-image: url(../images/toss2.PNG); 
+    }
+    .introImg{
+        position: relative;
+        width: 300px;
+        height: 200px;
+        border-radius: 10px;
+        box-shadow: .5px .5px 1px 1px #434649;
+        background-image: url(../images/intro1.PNG); 
+    }
+    .introImg:hover{
+        background-image: url(../images/intro2.PNG); 
+    }
+    /* pf-content */
 /* content */
+
+
 
 
 /* animation */

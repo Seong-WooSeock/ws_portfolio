@@ -160,4 +160,19 @@ for (let i = 0; i < intro_wrapper.length; i++){
         }
     }
 }
-//history
+//pf
+const swiper_slider = new Swiper('.swiper-container', {
+    speed: 300,
+    debugger: true,
+    loop: true,
+    mousewheel: false,
+    pagination: {
+        el: '.swiper-pagination',
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+    }
+});
+
+//pf
