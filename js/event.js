@@ -146,3 +146,18 @@ dark_mode.onclick = () => {
     document.querySelector('.skin_font span').innerHTML = "Light Mode";
 }
 //다크, 라이트모드
+//allcontent
+let content_style = document.querySelectorAll('.content_style');
+let intro_wrapper = document.querySelectorAll('.intro_wrapper');
+let exit_box = document.querySelectorAll('.exit_box');
+
+for (let i = 0; i < intro_wrapper.length; i++){
+    intro_wrapper[i].onclick = () => {
+        content_style[i].style.display = 'block';
+        exit_box[i].onclick = () => {
+        content_style[i].style.display = 'none';
+
+        }
+    }
+}
+//history

@@ -1,6 +1,7 @@
 :root[color-theme='dark'] {
     --body_bg: #32373D;
     --font_color: #ffffff;
+    --highlight: #32373D;
     --border_profile: 3px solid #ffffff;
     --side_bg: black;
     --border_content: 1px solid #ffffff;
@@ -11,6 +12,7 @@
 :root[color-theme='light'] {
     --body_bg: #F8F7F3;
     --font_color: black;
+    --highlight: #FFEFD1;
     --border_profile: 3px solid black;
     --side_bg: #ffffff;
     --border_content: 1px solid black;
@@ -19,7 +21,7 @@
     --grad_background: linear-gradient(-45deg, #C26225, #EDD4DA, #94B5D6, #23d5ab); 
 }
   
-
+/* main */
 
 *{
     margin: 0;
@@ -29,6 +31,9 @@
 a{
     text-decoration: none;
     color:var(--font_color);
+}
+ul{
+    list-style: none;
 }
 body{
     background-color: var(--body_bg);
@@ -268,6 +273,8 @@ body{
     left: 0;
     border: .5px solid black;
     animation: btn_light 1s 1;
+    cursor: pointer;
+
 
 }
 .dark_mode{
@@ -278,6 +285,8 @@ body{
     right: 0;
     border: .5px solid white;
     animation:btn_dark  1s 1;
+    cursor: pointer;
+
 }
 
 .skin_font{
@@ -285,6 +294,171 @@ body{
     margin-left: 150px;
     color: var(--font_color);
 }
+
+/* main */
+
+
+
+/* content */
+.content_style{
+    display: none;
+    position: absolute;
+    left: 15%;
+    top: 10%;
+    width: 70%;
+    z-index: 10;
+    height: 80%;
+    background-color: var(--content_bg);
+    border: var(--border_content);
+    color: var(--font_color);
+    border-radius: 10px;
+}
+.hd_content{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.h2_box{
+    padding: 10px 20px ;
+}
+.h2_box h2{
+    font-size: 2em;
+    font-family: 'Anton', sans-serif;
+}
+.exit_box{
+    font-size: 2em;
+    padding: 10px 20px ;
+    cursor: pointer;
+}
+
+.dc_wrapper{
+    background-color: var(--body_bg);
+    max-width: 690px;
+    margin: 10px auto;
+    overflow-y: clip;
+    text-overflow: clip;
+
+}
+
+    /* history-content */
+
+    .history_wrapper{
+        position: relative;
+        
+    }
+    .history_flex_style{
+        position: relative;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+    .history_flex_style div{
+        margin: 0 10px;
+    }
+    .it_history{
+        order: 1;
+
+    }
+    .it_history li:first-child{
+        padding-top: 60px;
+        padding-bottom: 120px;
+    }    
+    .it_history li:last-child{
+        padding-top: 10px;
+        padding-bottom: 20px;
+    }
+    .it_history li, .ect_history li{
+        cursor: pointer;
+    }
+    .line_style{
+        order:2;
+        width: 1px;
+        height: 100%;
+        padding: 0;
+        border: var(--border_content);
+        position: absolute;
+        background-color: var(--font_color);
+
+    }
+    .ect_history{
+        order:3;
+        padding-left: 50px;
+    }
+    .ect_history li:first-child{
+        padding-bottom: 80px;
+    }    
+    .ect_history li:last-child{
+        padding-top: 10px;
+    }
+    .sm_hd_box{
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .ts_year{
+        font-size: .8em;
+        opacity: 0.8;
+    }
+    .spot_point{
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: var(--font_color);
+        left: -5px;
+        animation: fadeInDown 1s 1;
+    }
+    .his_line{
+        position: absolute;
+        width: 20px;
+        height: 1px;
+        background-color: var(--font_color);
+        animation: fadeInDown 1s 1;
+    }
+    .history_flex_style strong{
+        background-color:var(--highlight);
+    }
+    .point1{
+        top: 17px;
+    }
+    .point2{
+        top: 88px;
+    }
+    .point3{
+        top: 140px;
+    }
+    .point4{
+        top: 191px;
+    }
+    .point5{
+        top: 262px;
+    }  
+    .point6{
+        top: 317px;
+    }
+    .line1{
+        top: 21px;
+    }
+    .line2{
+        top: 92px;
+        left: -22px;
+    }
+    .line3{
+        top: 144px;
+    }
+    .line4{
+        top: 195px;
+    }
+    .line5{
+        left: -22px;
+        top: 266px;
+    }
+    .line6{
+        left: -22px;
+        top: 321px;
+    }
+    /* history-content */
+
+/* content */
 
 
 /* animation */
@@ -306,7 +480,20 @@ body{
         opacity: 1;
     }
 }
+@keyframes infiniteOpacity {
+    0% {
+        opacity: 0.4;
+        font-weight: 900;
+    }50%{
+        opacity: 1;
+        font-weight: 900;
+    }
+    to {
+        opacity: 0.4;
+        font-weight: 900;
 
+    }
+}
 @keyframes fadeInDown {
     0% {
         opacity: 0;
