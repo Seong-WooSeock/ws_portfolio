@@ -16,6 +16,24 @@ let flame = document.querySelector('.flame');
 let hand = document.querySelector('.hand');
 let addr_book = document.querySelector('.addr_book');
 //icon
+//다크, 라이트모드
+const light_mode = document.querySelectorAll('.light_mode');
+const dark_mode = document.querySelectorAll('.dark_mode');
+
+const isUserColorTheme = localStorage.getItem('color-theme');
+//다크, 라이트모드
+//allcontent
+let content_style = document.querySelectorAll('.content_style');
+let intro_wrapper = document.querySelectorAll('.intro_wrapper');
+let exit_box = document.querySelectorAll('.exit_box');
+let opacity_cover = document.querySelector('.opacity_cover');
+//allcontent
+//intro
+let tmi_content = document.querySelector('.btn_dp_none');
+let tmibutton = document.querySelector('.tmibutton');
+//intro
+
+
 function opacity_defaultTab(){
     history_tab.style.opacity = '1';
     portfolio_tab.style.opacity = '1';
@@ -108,54 +126,57 @@ contact_tab.onmouseout = () => {
 
 }
 
-//다크, 라이트모드
-const light_mode = document.querySelector('.light_mode');
-const dark_mode = document.querySelector('.dark_mode');
 
-const isUserColorTheme = localStorage.getItem('color-theme');
+//다크, 라이트모드
 
 window.onload = () => {
     if (isUserColorTheme === 'dark') {
       localStorage.setItem('color-theme', 'dark');
         document.documentElement.setAttribute('color-theme', 'dark');
-        light_mode.style.display = 'none';
+        light_mode[0].style.display = 'none';
+        light_mode[1].style.display = 'none';
         document.querySelector('.skin_font span').innerHTML = "Dark Mode";    
     } else {
       localStorage.setItem('color-theme', 'light');
         document.documentElement.setAttribute('color-theme', 'light');
-        dark_mode.style.display = 'none';
-        light_mode.style.display = 'block';
+        dark_mode[0].style.display = 'none';
+        dark_mode[1].style.display = 'none';
+        light_mode[0].style.display = 'block';
+        light_mode[1].style.display = 'block';
         document.querySelector('.skin_font span').innerHTML = "Light Mode";
     }
 };
 
-
-light_mode.onclick = () => {
-    localStorage.setItem('color-theme', 'dark');
-    document.documentElement.setAttribute('color-theme', 'dark');
-    dark_mode.style.display = 'block';
-    light_mode.style.display = 'none';
-    document.querySelector('.skin_font span').innerHTML = "Dark Mode";
+for (let i = 0; i < light_mode.length; i++){
+    light_mode[i].onclick = () => {
+        localStorage.setItem('color-theme', 'dark');
+        document.documentElement.setAttribute('color-theme', 'dark');
+        dark_mode[0].style.display = 'block';
+        dark_mode[1].style.display = 'block';
+        light_mode[0].style.display = 'none';
+        light_mode[1].style.display = 'none';
+        document.querySelector('.skin_font span').innerHTML = "Dark Mode";
+    }
+    
+    dark_mode[i].onclick = () => {
+        localStorage.setItem('color-theme', 'light');
+        document.documentElement.setAttribute('color-theme', 'light');
+        dark_mode[0].style.display = 'none';
+        dark_mode[1].style.display = 'none';
+        light_mode[0].style.display = 'block';
+        light_mode[1].style.display = 'block';
+        document.querySelector('.skin_font span').innerHTML = "Light Mode";
+    }
 }
 
-dark_mode.onclick = () => {
-    localStorage.setItem('color-theme', 'light');
-    document.documentElement.setAttribute('color-theme', 'light');
-    dark_mode.style.display = 'none';
-    light_mode.style.display = 'block';
-    document.querySelector('.skin_font span').innerHTML = "Light Mode";
-}
 //다크, 라이트모드
-//allcontent
-let content_style = document.querySelectorAll('.content_style');
-let intro_wrapper = document.querySelectorAll('.intro_wrapper');
-let exit_box = document.querySelectorAll('.exit_box');
-let opacity_cover = document.querySelector('.opacity_cover');
 
+//allcontent
 for (let i = 0; i < intro_wrapper.length; i++){
     intro_wrapper[i].onclick = () => {
         content_style[i].style.display = 'block';
         opacity_cover.style.display = 'block';
+        window.scrollTo(0, 0);
         exit_box[i].onclick = () => {
             content_style[i].style.display = 'none';
             opacity_cover.style.display = 'none';
@@ -180,14 +201,18 @@ const swiper_slider = new Swiper('.swiper-container', {
         prevEl: '.swiper-button-prev'
     }
 });
-
 //pf
 
 //intro
-let tmi_content = document.querySelector('.btn_dp_none');
-let tmibutton = document.querySelector('.tmibutton');
-
 tmibutton.onclick = () => {
     tmi_content.style.display = 'block';
     tmibutton.style.display = 'none';
+}
+
+let toggle_sidebar = document.querySelector('.toggle_sidebar');
+let side_tab = document.querySelector('.side_tab');
+
+toggle_sidebar.onclick = () => {
+    side_tab.style.display = "block";
+    side_tab.style.position = "absoulte";
 }

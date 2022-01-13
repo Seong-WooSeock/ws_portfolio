@@ -64,7 +64,26 @@ body{
 
 .all_content_wrapper{
     display: flex;
+    position: relative;
 }
+
+
+.sidebar_dp_none{
+    color: var(--font_color);
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 1.8em;
+    font-weight: 600;
+    color: var(--font_color);
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+.under_dp_none{
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+}
+
 
 .intro_box{
     max-width: 650px;
@@ -521,16 +540,7 @@ body{
         padding-bottom: 20px;
         cursor: pointer;
     }
-    @media screen and (max-width: 980px){
-        .img_detail_box{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .swiper-slide{
-            margin: 0;
-        }
-    }
+ 
     .skyImg{
         position: relative;
         width: 300px;
@@ -878,3 +888,44 @@ body{
 
 /* animation */
 
+@media screen and (max-width: 960px){
+
+    .img_detail_box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .swiper-slide{
+        margin: 0;
+    }
+
+    .side_tab{
+        display: none !important;
+    }
+}
+
+@media screen and (max-width:650px){
+    .flex_div_style{
+        flex-direction: column;        
+    }
+    .sidebar_dp_none{
+        color: var(--font_color);
+        font-size: 1.1em;
+        top: 30px;
+        right: 10px;
+    }
+    .under_dp_none{
+        position: absolute;
+        bottom: 30px;
+        right: 10px;
+    }
+    .spot_point{
+        display: none;
+    }
+    .his_line{
+        display: none;
+    }
+    .dc_wrapper{
+        margin: 0 10px;
+    }
+}
