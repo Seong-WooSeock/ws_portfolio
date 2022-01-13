@@ -150,13 +150,19 @@ dark_mode.onclick = () => {
 let content_style = document.querySelectorAll('.content_style');
 let intro_wrapper = document.querySelectorAll('.intro_wrapper');
 let exit_box = document.querySelectorAll('.exit_box');
+let opacity_cover = document.querySelector('.opacity_cover');
 
 for (let i = 0; i < intro_wrapper.length; i++){
     intro_wrapper[i].onclick = () => {
         content_style[i].style.display = 'block';
+        opacity_cover.style.display = 'block';
         exit_box[i].onclick = () => {
-        content_style[i].style.display = 'none';
-
+            content_style[i].style.display = 'none';
+            opacity_cover.style.display = 'none';
+        }
+        opacity_cover.onclick = () => {
+            content_style[i].style.display = 'none';
+            opacity_cover.style.display = 'none';
         }
     }
 }
@@ -176,3 +182,12 @@ const swiper_slider = new Swiper('.swiper-container', {
 });
 
 //pf
+
+//intro
+let tmi_content = document.querySelector('.btn_dp_none');
+let tmibutton = document.querySelector('.tmibutton');
+
+tmibutton.onclick = () => {
+    tmi_content.style.display = 'block';
+    tmibutton.style.display = 'none';
+}
