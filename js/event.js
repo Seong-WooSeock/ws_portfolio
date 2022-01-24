@@ -19,7 +19,7 @@ let addr_book = document.querySelector('.addr_book');
 //다크, 라이트모드
 const light_mode = document.querySelectorAll('.light_mode');
 const dark_mode = document.querySelectorAll('.dark_mode');
-
+let ld_span = document.querySelectorAll('.skin_font span');
 const isUserColorTheme = localStorage.getItem('color-theme');
 //다크, 라이트모드
 //allcontent
@@ -33,6 +33,8 @@ let tmi_content = document.querySelector('.btn_dp_none');
 let tmibutton = document.querySelector('.tmibutton');
 //intro
 
+let toggle_sidebar = document.querySelector('.toggle_sidebar');
+let side_tab = document.querySelector('.side_tab');
 
 function opacity_defaultTab(){
     history_tab.style.opacity = '1';
@@ -135,7 +137,8 @@ window.onload = () => {
         document.documentElement.setAttribute('color-theme', 'dark');
         light_mode[0].style.display = 'none';
         light_mode[1].style.display = 'none';
-        document.querySelector('.skin_font span').innerHTML = "Dark Mode";    
+        ld_span[0].innerHTML = "Dark Mode";    
+        ld_span[1].innerHTML = "Dark Mode";    
     } else {
       localStorage.setItem('color-theme', 'light');
         document.documentElement.setAttribute('color-theme', 'light');
@@ -143,7 +146,8 @@ window.onload = () => {
         dark_mode[1].style.display = 'none';
         light_mode[0].style.display = 'block';
         light_mode[1].style.display = 'block';
-        document.querySelector('.skin_font span').innerHTML = "Light Mode";
+        ld_span[0].innerHTML = "Light Mode";
+        ld_span[1].innerHTML = "Light Mode";
     }
 };
 
@@ -155,7 +159,8 @@ for (let i = 0; i < light_mode.length; i++){
         dark_mode[1].style.display = 'block';
         light_mode[0].style.display = 'none';
         light_mode[1].style.display = 'none';
-        document.querySelector('.skin_font span').innerHTML = "Dark Mode";
+        ld_span[0].innerHTML = "Dark Mode";    
+        ld_span[1].innerHTML = "Dark Mode";    
     }
     
     dark_mode[i].onclick = () => {
@@ -165,7 +170,8 @@ for (let i = 0; i < light_mode.length; i++){
         dark_mode[1].style.display = 'none';
         light_mode[0].style.display = 'block';
         light_mode[1].style.display = 'block';
-        document.querySelector('.skin_font span').innerHTML = "Light Mode";
+        ld_span[0].innerHTML = "Light Mode";
+        ld_span[1].innerHTML = "Light Mode";
     }
 }
 
@@ -209,10 +215,3 @@ tmibutton.onclick = () => {
     tmibutton.style.display = 'none';
 }
 
-let toggle_sidebar = document.querySelector('.toggle_sidebar');
-let side_tab = document.querySelector('.side_tab');
-
-toggle_sidebar.onclick = () => {
-    side_tab.style.display = "block";
-    side_tab.style.position = "absoulte";
-}
